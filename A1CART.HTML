@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="icon" type="image/x-icon" href="Logo.jpeg">
+
+  <title>A1 CART</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #222;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 25px;
+    }
+
+    /* Navigation */
+    .top {
+      overflow: hidden;
+    }
+
+    .top a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .top a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .top a.active {
+      background-color: #ff9800;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .top input[type=text] {
+      float: right;
+      padding: 8px;
+      margin-top: 7px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    /* Login Button */
+    button {
+      border: none;
+      background: #2196f3;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1976d2;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-image: linear-gradient(to bottom, red, black);
+      color: white;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-logo {
+      background-color: white;
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    /* Categories */
+    .categories {
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+
+    .categories h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .category-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .category-card {
+      background-color: white;
+      width: 220px;
+      min-height: 200px;
+      padding: 25px 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-card .icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .category-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .category-card p {
+      margin-bottom: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .category-card button {
+      background-color: #ff9800;
+    }
+
+    .category-card button:hover {
+      background-color: #e68900;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 800px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .top {
+        width: 100%;
+        text-align: center;
+      }
+
+      .top a {
+        float: none;
+        display: inline-block;
+      }
+
+      .top input[type=text] {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .hero {
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .category-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-card {
+        width: 90%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <h1>A1 CART</h1>
+
+    <div class="top">
+      <a class="active" href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+
+      <input type="text" placeholder="Search..">
+    </div>
+
+    <div class="login">
+      <button onclick="location.href='login.html'">
+        Login
+      </button>
+    </div>
+
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+
+    <div class="hero-logo">
+      <img src="logo.png" alt="A1 CART Logo">
+    </div>
+
+    <div class="hero-content">
+
+      <h2>Welcome to A1 CART</h2>
+
+      <p>
+        Find amazing products at great prices.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Categories Section -->
+  <section class="categories" id="categories">
+
+    <h2>Shop by Category</h2>
+
+    <div class="category-container">
+
+
+      <!-- Movies -->
+      <div class="category-card">
+
+        <div class="icon">
+          🎬
+        </div>
+
+        <h3>Movies</h3>
+
+        <p>
+          Latest movies and entertainment.
+        </p>
+
+        <button>
+          Shop Now
+        </button>
+
+      </div>
+
+
+      <!-- Dresses -->
+      <div class="category-card">
+
+        <div class="icon">
+          👗
+        </div>
+
+        <h3>Dresses</h3>
+
+        <p>
+          Trendy dresses for everyone.
+        </p>
+
+        <button>
+          Shop Now
+        </button>
+
+      </div>
+
+
+      <!-- Electronics -->
+      <div class="category-card">
+
+        <div class="icon">
+          💻
+        </div>
+
+        <h3>Electronics</h3>
+
+        <p>
+          Mobiles, laptops and gadgets.
+        </p>
+
+        <button>
+          Shop Now
+        </button>
+
+      </div>
+
+
+      <!-- Cosmetics -->
+      <div class="category-card">
+
+        <div class="icon">
+          💄
+        </div>
+
+        <h3>Cosmetics</h3>
+
+        <p>
+          Beauty and skincare products.
+        </p>
+
+        <button>
+          Shop Now
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- About Section -->
+  <section id="about" style="padding: 40px; text-align: center;">
+
+    <h2>About A1 CART</h2>
+
+    <p style="margin-top: 15px;">
+      A1 CART is an online shopping website where you can
+      find different products at great prices.
+    </p>
+
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" style="padding: 40px; text-align: center;">
+
+    <h2>Contact Us</h2>
+
+    <p style="margin-top: 15px;">
+      Email: a1cart@example.com
+    </p>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      © 2026 A1 CART. All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+
+</html>
